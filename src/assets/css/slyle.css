@@ -1,0 +1,1425 @@
+@import 'reset.css';
+@import 'myAnimate.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Reenie+Beanie&family=Yanone+Kaffeesatz:wght@500;700&display=swap');
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Reenie Beanie', cursive;
+font-family: 'Yanone Kaffeesatz', sans-serif; */
+
+/* A849FF */
+
+html {
+    --main-color: #1D9BF5;
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #000;
+    padding-top: 10px;
+    position: relative;
+    margin-right: 0px;
+}
+
+.up{
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    animation: opHide 1s;
+    display: none;
+    opacity: 0;
+}
+
+.up.active {
+    display: block;
+    opacity: 1;
+    animation: opShow 1s;
+}
+
+.up a {
+    display: block;
+    padding: 10px 3px;
+    width: 50px;
+    border-radius: 50%;
+    animation: shadow-blue 2s linear infinite;
+}
+
+.up img,
+.message img {
+    width: 100%;
+}
+
+.message {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 10;
+}
+
+.message a {
+    display: block;
+    padding: 10px;
+    background: rgb(139, 139, 139);
+    width: 50px;
+    border-radius: 50%;
+    animation: shadow-yellow 2s linear infinite;
+    transition: background 0.5s;
+}
+
+.message a:hover {
+    background: rgb(255, 255, 255);
+    transition: background 0.5s;
+}
+
+/* *Header */
+
+header {
+    width: 100%;
+    color: #fff;
+}
+
+.header__top {
+    display: flex;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    text-shadow: 5px 5px 5px var(--main-color);
+}
+
+.header__logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+}
+.header__logo-img {
+    max-width: 90px;
+}
+.header__logo-img img{
+    width: 100%;
+}
+.header__logo-text {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 62px;
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+}
+
+.header__phone {
+    display: flex;
+    align-items: center;
+}
+
+.header__phone-number {
+    margin-right: 20px;
+}
+
+.header__phone p:not(:last-child) {
+    margin-bottom: 5px;
+}
+.header__phone-number a {
+    color: #fff;
+}
+.header__phone-number a:hover {
+    color: var(--main-color);
+    text-shadow: 5px 5px 5px #fff;
+    transition: all .5s;
+}
+
+.header__phone-social img {
+    width: 35px;
+}
+.header__phone-social a:hover {
+    transition: 0.5s;
+    opacity: 0.7;
+}
+
+.header__nav {
+    width: 100%;
+    background: var(--main-color);
+    display: flex;
+    justify-content: center;
+}
+
+.header__nav-list li {
+    position: relative;
+    float: left;
+}
+
+.header__nav-list a {
+    padding: 15px 5vw;
+    display: block;
+    background: var(--main-color);
+    color: #fff;
+    font-size: 1.3rem;
+}
+.header__nav-list a:hover{
+    color: rgba(255, 255, 255, 0.616);
+    transition: all .5s;
+    box-shadow: inset 0px 0px 20px #fff;
+}
+
+a.nav-services {
+    display: flex;
+    align-items: flex-end;
+}
+
+.header__nav-list li:not(:last-child){
+    border-right: 1px solid #fff;
+}
+
+.header__nav-items {
+    position: relative;
+}
+
+.header__nav-drop {
+    position: absolute;
+    display: none;
+}
+
+.header__nav-drop li{
+    width: 100%;
+}
+
+.header__nav-drop li:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #fff;
+}
+
+.header__nav-drop a {
+    padding: 8px 10px;
+}
+
+.header__nav-items:hover .header__nav-drop {
+    animation-name: opShow;
+    animation-duration: 0.7s;
+    display: block;
+    z-index: 5;
+}
+
+.header__nav-items:hover .header__nav-drop {
+    animation-name: opShow;
+    animation-duration: 0.7s;
+    display: block;
+    z-index: 5;
+}
+
+.burger-menu {
+    display: none;
+}
+
+/* *Top Screen */
+
+.top-info {
+    min-height: calc(100vh - 165.35px);
+    background: url(../img/head-bg.jpg) no-repeat;
+    background-size: 65%;
+    background-position: 60% 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10vh 5vw 2vh 5vw;
+}
+
+.top-info__for-us {
+    color: rgb(199, 213, 253);
+    max-width: 40vw;
+    flex: 1 1;
+}
+
+.top-info__for-us h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 40px;
+}
+
+.top-info__for-us p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.form-block {
+    background: #cbdfee;
+    width: 400px;
+    border: 1px solid var(--main-color);
+}
+
+.form-block form {
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+}
+
+.form-block h3 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 2px;
+}
+.form-block p {
+    font-size: .6rem;
+    margin-bottom: 15px;
+    position: relative;
+}
+.form-block p::before{
+    content: '';
+    width: 90%;
+    height: 2px;
+    background: var(--main-color);
+    position: absolute;
+    bottom: -2px;
+    left: 5%;
+}
+
+.form-block li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+
+.form-block label {
+    margin-bottom: 6px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.1rem;
+}
+.form-block input {
+    width: 80%;
+    padding: 8px 20px;
+}
+.form-block form input{
+    margin-bottom: 10px;
+}
+
+.form-block button {
+    width: 80%;
+    padding: 25px 10px;
+    font-weight: bold;
+    position: relative;
+    transition: .8s;
+    overflow: hidden;
+}
+
+.form-block button:hover {
+    color: #fff;
+    background: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color),
+    0 0 15px var(--main-color),
+    0 0 20px var(--main-color),
+    0 0 30px var(--main-color);
+}
+.form-block button::before {
+    content: '';
+    position: absolute;
+    top: -350%;
+    left: 45%;
+    width: 30px;
+    height: 800%;
+    background: var(--main-color);
+    transition: 1s;
+    animation: animate 2s linear infinite;
+    animation-delay: calc(0.33s * 2);
+}
+.form-block button:hover::before{
+    width: 5000%;
+}
+
+.form-block button::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: var(--main-color);
+    transition: .5s;
+}
+.form-block button:hover::after {
+    background: var(--main-color);
+}
+.form-block button span {
+    position: absolute;
+    z-index: 15;
+    font-size: 1.2rem;
+    top: 25%;
+    left: 0;
+    right: 0;
+}
+
+.form-result {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-result-img {
+    max-width: 30%;
+    margin: 20px 0;
+}
+
+.form-result-img img{
+    width: 100%;
+}
+
+.form-result p {
+    font-size: 1rem;
+}
+
+.form-ok,
+.form-error {
+    display: none;
+    opacity: 0;
+}
+
+.form-ok.active,
+.form-error.active {
+    display: flex;
+    opacity: 1;
+    animation: opShow 1s;
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid var(--main-color);
+    padding: 7px 19px;
+}
+
+p.phone-error {
+    color: rgb(238, 88, 29);
+    margin: 5px 0;
+    font-size: 14px;
+    display: none;
+}
+p.phone-error::before{
+    content: '';
+    width: 0;
+    height: 0;
+}
+
+/* *Repair */
+
+.repair {
+    width: 100%;
+    background: linear-gradient(45deg, #f5f7fa, #7a8391);
+    padding: 30px 40px;
+}
+
+.repair-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.section-titel {
+    color: var(--main-color);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-titel::before{
+    content: '';
+    width: 10%;
+    height: 3px;
+    border-radius: 25%;
+    background: var(--main-color);
+    position: absolute;
+    bottom: -7px;
+    left: 45%;
+}
+
+.repair-block {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.repair-phones {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 1vw;
+}
+
+.repair-phones-link{
+    height: 16vh;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+.repair-phones-link:not(:last-child) {
+    margin-right: 5px;
+}
+
+.repair-phones-link:hover  img{
+    transition: all .5s;
+    transform: scale(1.2);
+    opacity: 0.7;
+}
+.repair-phones-link:hover  p{
+    color: #000;
+    opacity: 1;
+}
+
+.repair-phones-link.active {
+    opacity: 0.7;
+}
+
+.repair-phones-link img{
+    width: 100%;
+    transition: all .5s;
+}
+
+.repair-phones-link p {
+    position: absolute;
+    font-size: 1.5rem;
+    color: #fff;
+    top: 20%;
+    left: 20%;
+    transition: color .5s;
+}
+
+.repair-price-phone {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    background: url(../img/repair-img1.png) no-repeat;
+    background-size: 30%;
+    background-position: -5% 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.repair-price-phone.active {
+    display: flex;
+    opacity: 1;
+    transition: all 1s;
+}
+
+
+
+/* *Why We */
+
+.why-we {
+    padding: 20px 10px;
+}
+
+.why-we-block {
+    display: flex;
+    justify-content: space-around;
+}
+
+.why-we-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 200px;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: #fff;
+}
+
+.why-we-img {
+    padding: 20px;
+    width: 150px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.why-we-img:hover{
+    transform: scale(1.2);
+    transition: transform .5s;
+}
+
+.why-we-img img {
+    width: 100%;
+    z-index: 5;
+}
+
+.why-we-img::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: var(--main-color);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px var(--main-color),
+    0 0 20px var(--main-color),
+    0 0 30px var(--main-color),
+    0 0 40px var(--main-color),
+    0 0 50px var(--main-color),
+    0 0 60px var(--main-color),
+    0 0 70px var(--main-color),
+    0 0 80px var(--main-color),
+    0 0 90px var(--main-color),
+    0 0 100px var(--main-color);
+    animation: myOrbit 2s linear infinite;
+}
+
+.why-we-img::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: var(--main-color);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px var(--main-color),
+    0 0 20px var(--main-color),
+    0 0 30px var(--main-color),
+    0 0 40px var(--main-color),
+    0 0 50px var(--main-color),
+    0 0 60px var(--main-color),
+    0 0 70px var(--main-color),
+    0 0 80px var(--main-color),
+    0 0 90px var(--main-color),
+    0 0 100px var(--main-color);
+    animation: myOrbit1 2s linear infinite;
+}
+
+/* *Products */
+
+.products {
+    width: 100%;
+    background: linear-gradient(45deg, #7a8391, #f5f7fa);
+    padding: 30px 40px;
+}
+
+.products-wrapper {
+    width: 100%;
+    height: 100%;
+    background: url(../img/progucts-bg.png) no-repeat;
+    background-size: 50%;
+    background-position: 0 10%;
+}
+
+
+.products-block {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.products-group {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 5px 15vw;
+    color: #000;
+    background: rgb(74, 168, 231);
+    box-shadow: 0 0 2px var(--main-color);
+    margin-bottom: 10px;
+    transition: color .5s;
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+}
+
+.products-group.active {
+    opacity: 0.8;
+    color: #fff;
+}
+
+.products-group.show{
+        display: block;
+        opacity: 1;
+        animation: opShow 1s;
+}
+
+.products-group-more {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    color: #333;
+    transition: color, transform 0.5s;
+}
+
+.hide-group {
+    display: none;
+}
+
+.products-group-more:hover {
+    transform: scale(1.1);
+    color: #000;
+    transition: all 0.5s;
+}
+
+.products-group:hover  {
+    color: #fff;
+    background: var(--main-color);
+    box-shadow: 0 0 17px var(--main-color);
+    transition: all .5s;
+}
+
+.products-group-price {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+
+.products-group-price.active {
+    max-height: 100%;
+    opacity: 1;
+    margin-bottom: 10px;
+    transition: all 1s;
+}
+
+.products-phone-price caption,
+.repair-price-phone caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.first-column {
+    padding-right: 50px;
+}
+.second-column {
+    text-align: center;
+    font-weight: bold;
+}
+
+.products-group-price td,
+.repair-price-phone td {
+    border-bottom: 2px dashed var(--main-color);
+}
+
+.products-group-price thead,
+.repair-price-phone thead {
+    border-bottom: 2px solid var(--main-color);
+}
+
+.fleshka {
+    background: url(../img/fleshka.png) no-repeat;
+    background-size: 30%;
+    background-position: 90% 100%;
+}
+
+.speaker{
+    background: url(../img/speaker.png) no-repeat;
+    background-size: 30%;
+    background-position: 70% 100%;
+}
+
+.powerbank {
+    background: url(../img/pb.png) no-repeat;
+    background-size: 30%;
+    background-position: 70% 100%;
+}
+
+/* Buttom */
+
+.bottom {
+    width: 100%;
+    padding: 40px 20px;
+}
+
+.bottom-wrapper {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.bottom-info {
+    width: 50%;
+    padding: 0 1rem;
+    text-align: center;
+}
+.bottom-title {
+    margin-bottom: 25px;
+}
+.bottom__logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10vh auto;
+}
+.bottom__logo-img {
+    max-width: 30vw;
+}
+.bottom__logo-img img{
+    width: 100%;
+}
+.bottom__logo-text {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 6rem;
+    font-weight: 900;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+}
+
+.bottom-info p {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.bottom__btn {
+    width: 400px;
+    padding: 25px 10px;
+    font-weight: bold;
+    position: relative;
+    transition: .8s;
+    overflow: hidden;
+}
+
+.bottom__btn:hover {
+    color: #fff;
+    background: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color),
+    0 0 15px var(--main-color),
+    0 0 20px var(--main-color),
+    0 0 30px var(--main-color);
+}
+.bottom__btn::before {
+    content: '';
+    position: absolute;
+    top: -350%;
+    left: 45%;
+    width: 30px;
+    height: 800%;
+    background: var(--main-color);
+    transition: 1s;
+    animation: animate 2s linear infinite;
+    animation-delay: calc(0.33s * 2);
+}
+.bottom__btn:hover::before{
+    width: 5000%;
+}
+
+.bottom__btn::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: var(--main-color);
+    transition: .5s;
+}
+.bottom__btn:hover::after {
+    background: var(--main-color);
+}
+.bottom__btn span {
+    position: absolute;
+    z-index: 2;
+    font-size: 1rem;
+    top: 23%;
+    left: 0;
+    right: 0;
+}
+
+.bottom-contacts {
+    width: 50%;
+    padding: 0 1rem;
+    border-left: 3px solid var(--main-color);
+}
+
+.bottom-contacts h4 {
+    color: var(--main-color);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.bottom-contacts-text {
+    color: #fff;
+    font-size: 1rem;;
+    display: flex;
+    margin-bottom: 0.8rem;
+}
+
+.bottom-contacts-text a{
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.7s;
+}
+
+.bottom-contacts-text a:hover{
+    color: rgb(2, 115, 221);
+    opacity: 0.7;
+    transition: all 0.7s;
+}
+
+.bottom-contacts-logo {
+    width: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+.bottom-contacts-logo img {
+    width: 100%;
+}
+
+.footer {
+    background: #333;
+}
+
+.footer-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-text {
+    color: #fff;
+}
+
+.modal-form,
+.modal-burger {
+    z-index: 20;
+    background: #cbdfeeec;
+    padding: 40px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+}
+
+.modal-burger {
+    padding: 20px;
+}
+
+.modal-form.active,
+.modal-burger.active {
+    display: block;
+    opacity: 1;
+    animation: opShow 1s;
+}
+
+.modal-form .form-block {
+    background: #cbdfee;
+    border: none;
+    margin: 5% auto;
+    max-width: 50%;
+    position: relative;
+}
+
+.modal-form .form-block form {
+    display: none;
+    opacity: 0;
+}
+
+.modal-form .form-block form.active {
+    display: block;
+    opacity: 1;
+    animation: opShow 1s;
+}
+
+.modal-form .form-block input {
+    width: 70%;
+}
+
+.modal-form .form-block textarea {
+    width: 70%;
+    height: 100px;
+    padding: 8px 20px;
+    resize: none;
+}
+
+.modal-form .form-block button span {
+    font-size: 0.9rem;
+    left: 0;
+    right: 0;
+}
+
+.burger-block {
+    background: #cbdfee;
+    margin: 0 auto;
+    width: 100%;
+    height: 70%;
+    position: relative;
+}
+.burger-block ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.burger-block li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.burger-block a{
+    color: var(--main-color);
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0.6;
+    transition: opacity 0.7s;
+}
+
+.burger-block a:hover {
+    opacity: 1;
+    transition: opacity 0.7s;
+}
+
+.burger-block .close {
+    position: absolute;
+    background: none;
+    top: 1rem;
+    right: 1rem;
+}
+
+.modal-form .form-block .close {
+    position: absolute;
+    background: none;
+    top: -2rem;
+    right: -1rem;
+}
+
+.contact-social {
+    margin-bottom: 10px;
+}
+.contact-social a{
+    margin-right: 7px;
+}
+.contact-social img{
+    width: 40px;
+}
+
+/* *Media */
+
+@media(max-width: 1024px) {
+    .bottom__logo-img {
+        max-width: 15vw;
+    }
+    .bottom__logo-text {
+        font-size: 4rem;
+    }
+    .up a {
+        padding: 7px 3px;
+        width: 30px
+    }
+    .repair {
+        padding: 20px 20px;
+    }
+    .repair-price-phone {
+        background-position: -10% 100%;
+    }
+    .products-block {
+        width: 90%;
+    }
+
+}
+
+@media(max-width: 920px) {
+    html {
+        font-size: 16px;
+    }
+
+    .bottom__btn {
+        width: 250px;
+    }
+    .bottom {
+        padding: 20px 20px;
+    }
+
+    .why-we-img {
+        width: 100px;
+        padding: 10px;
+    }
+
+    @keyframes myOrbit {
+        from { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+        to   { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+    }
+
+    @keyframes myOrbit1 {
+        from { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+        to   { transform: rotate(-360deg) translateX(60px) rotate(360deg); }
+    }
+
+    .why-we-img::after {
+        width: 7px;
+        height: 7px;
+    }
+    .why-we-img::before {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+@media(max-width: 820px) {
+    .top-info {
+        min-height: auto;
+    }
+    .header__top {
+        font-size: .8rem;
+    }
+    .header__phone-social img {
+        width: auto;
+    }
+    .header__nav-list a {
+        padding: 10px 4vw;
+    }
+    .header__logo-img {
+        max-width: 70px;
+    }
+    .header__logo-text{
+        font-size: 48px;
+    }
+    .repair {
+        padding: 20px 0;
+    }
+
+    .repair-phones-link p {
+        font-size: 1rem;
+    }
+
+    .repair-price-phone{
+        background-size: 50%;
+        background-position: -30% 100%;
+    }
+    .products{
+        padding: 30px 0;
+    }
+    .bottom-wrapper{
+        flex-direction: column;
+    }
+    .bottom-info{
+        padding-bottom: 20px;
+    }
+    .bottom-info,
+    .bottom-contacts {
+        position: relative;
+        width: 100%;
+    }
+    .bottom-contacts {
+        padding: 1rem 1rem 0 1rem;
+        border: none;
+        border-top: 3px solid var(--main-color);
+    }
+    .bottom__logo {
+        width: 200px;
+        position: absolute;
+        display: inline-block;
+        margin: 0;
+        left: 50%;
+        bottom: -60%
+    }
+    .bottom__logo-img {
+        max-width: 10vw;
+        margin: 0 auto;
+    }
+    .bottom__logo-text {
+        font-size: 3rem;
+    }
+    .top-info__for-us {
+        margin-right: 10px;
+    }
+    .top-info__for-us h1 {
+        font-size: 2.3rem;
+    }
+
+    .form-block {
+        width: 300px;
+    }
+
+    .contact-social img{
+        width: 35px;
+    }
+}
+
+@media(max-width: 685px) {
+    .header__top {
+        flex-direction: column;
+        align-items: flex-end;
+        position: relative;
+    }
+    .header__top>p{
+        padding: 0 60px 6px 0;
+    }
+    .header__logo {
+        position: absolute;
+        top: 10%;
+        left: 3%;
+    }
+    .header__nav-list {
+        display: none;
+    }
+    .burger-menu {
+        display: block;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        margin: 5px 0 5px 20px;
+        padding: 5px;
+    }
+
+    .burger-menu img {
+        width: 20px;
+    }
+    .header__nav{
+        justify-content: flex-start;
+    }
+
+    .top-info {
+        align-items: center;
+        flex-direction: column;
+        background-size: 70%;
+        background-position: 80% 20%;
+        padding: 20px 30px;
+    }
+    .top-info__for-us {
+        max-width: 90vw;
+    }
+
+    .form-block {
+        width: 80vw;
+    }
+    .form-block button span {
+        top: 25%;
+    }
+
+    .section-titel {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .repair-phones-link {
+        height: 12vh;
+    }
+
+    .why-we-item {
+        font-size: 0.8rem;
+        line-height: 1rem;
+        max-width: 100px;
+    }
+    .why-we-img {
+        width: 50px;
+        padding: 10px;
+    }
+
+    @keyframes myOrbit {
+        from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+        to   { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+    }
+
+    @keyframes myOrbit1 {
+        from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+        to   { transform: rotate(-360deg) translateX(30px) rotate(360deg); }
+    }
+
+    .products-group {
+        font-size: 1rem;
+    }
+    .first-column {
+        padding-right: 10px;
+    }
+
+    .products-group-price {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+    .products-group-more {
+        font-size: 1rem;
+    }
+    .second-column {
+        width: 70px;
+    }
+
+    .footer-text {
+        font-size: .7rem;
+    }
+
+    .modal-form .form-block {
+        max-width: 100%;
+    }
+
+    .modal-form .form-block textarea {
+        height: 50px;
+    }
+
+    .modal-form .form-block button span {
+        font-size: 1.2rem;
+    }
+
+    .modal-form .form-block h3 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .modal-form .form-block label {
+        font-size: 1.7rem;
+    }
+    .form-result p {
+        text-align: center;
+    }
+
+}
+
+@media(max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    .header__top{
+        margin-bottom: 10px;
+        padding: 0 7px;
+    }
+    .header__logo {
+        width: 150px;
+        top: -30%;
+        left: 0;
+    }
+    .header__logo-img {
+        max-width: 40px;
+    }
+    .header__logo-text {
+        top: 30%;
+        font-size: 28px;
+    }
+    .header__top>p {
+        display: none;
+    }
+    .header__phone-number {
+        margin-right: 5px;
+    }
+    .burger-menu{
+        margin: 3px 0 3px 10px;
+        padding: 3px;
+    }
+    .top-info{
+        padding: 10px 5px;
+    }
+    .top-info__for-us h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .top-info__for-us p {
+        margin-bottom: 15px;
+        font-size: 1rem;
+        color: #fff;
+        line-height: 1.1rem;
+    }
+    .form-block form {
+        padding: 15px 10px 10px 10px;
+    }
+
+    .bottom__logo {
+        width: 100px;
+        left: 58%;
+        bottom: -170px;
+    }
+    .bottom__logo-img{
+        max-width: 7vw;
+    }
+    .bottom__logo-text{
+        font-size: 1.7rem;
+    }
+
+    .second-column {
+        width: 59px;
+    }
+
+    .repair {
+        padding: 10px 0 20px 0;
+    }
+
+    .repair-phones-link p {
+        font-size: .8rem;
+    }
+    .repair-phones-link {
+        height: 7vh;
+    }
+
+    .repair-price-phone {
+        background-size: 70%;
+        background-position: -70% 100%;
+    }
+    .why-we {
+        padding: 15px 0;
+    }
+    .products {
+        padding: 15px 0;
+    }
+    .products-group {
+        margin-bottom: 5px;
+    }
+    .section-titel {
+        margin-bottom: 15px;
+    }
+    .bottom__btn {
+        width: 90%;
+        padding: 20px 10px;
+    }
+    .bottom__btn span {
+        font-size: 1.2rem;
+        top: 23%;
+        left: 0;
+        right: 0;
+    }
+
+    .bottom {
+        padding: 15px 10px;
+    }
+    .message a{
+        padding: 5px;
+        width: 40px;
+    }
+
+    .footer-block {
+        padding: 0 10px;
+    }
+    .header__phone-social img {
+        width: 15px;
+    }
+    .footer-social {
+        display: none;
+    }
+
+    .form-block p {
+        font-size: .8rem;
+    }
+
+    .top-info .form-block label {
+        font-size: 1.5rem;
+    }
+    .top-info .form-block h3 {
+        font-size: 2rem;
+    }
+    .contact-social img{
+        width: 40px;
+    }
+
+    a.contact-phone{
+        font-size: 1.3rem;
+    }
+}

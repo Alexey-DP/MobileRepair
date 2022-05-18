@@ -1,0 +1,77 @@
+@keyframes opShow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.opShow {
+    animation-name: opShow;
+    animation-duration: .8s;
+}
+
+@keyframes opHide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+@keyframes myOrbit1 {
+    from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+    to   { transform: rotate(-360deg) translateX(80px) rotate(360deg); }
+}
+
+@keyframes shadow-blue {
+    0% {
+        box-shadow: 0 0 0 #1D9BF5;
+    }
+    25% {
+        box-shadow: 0 0 10px #1D9BF5;
+    }
+    50%{
+        box-shadow: 0 0 25px #1D9BF5;
+    }
+    75% {
+        box-shadow: 0 0 10px #1D9BF5;
+    }
+    100%{
+        box-shadow: 0 0 0 #1D9BF5;
+    }
+}
+
+@keyframes shadow-yellow {
+    0% {
+        box-shadow: 0 0 0 #b2ee0b;
+    }
+    25% {
+        box-shadow: 0 0 10px #b2ee0b;
+    }
+    50%{
+        box-shadow: 0 0 50px #b2ee0b;
+    }
+    75% {
+        box-shadow: 0 0 10px #b2ee0b;
+    }
+    100%{
+        box-shadow: 0 0 0 #b2ee0b;
+    }
+}

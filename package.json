@@ -1,0 +1,26 @@
+{
+  "name": "picture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "> 1%"
+  ],
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "babel": "*",
+    "babel-core": "*",
+    "babel-loader": "*",
+    "browser-sync": "*",
+    "core-js": "*",
+    "gulp": "*",
+    "webpack": "*",
+    "webpack-stream": "*"
+  }
+}
